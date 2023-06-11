@@ -1,0 +1,15 @@
+[package]
+name    = "uplay-stub"
+version = "0.1.0"
+edition = "2021"
+authors = [ "Gloria G." ]
+
+[lib]
+crate-type = [ "cdylib" ]
+
+[dependencies]
+lazy_static = "1.4.0"
+log        = "0.4.19"
+log4rs     = "1.2.0"
+serde      = { version = "1.0.164", features = ["derive"] }
+serde_json = "1.0.96"
