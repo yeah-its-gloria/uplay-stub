@@ -3,7 +3,7 @@
 
 use std::ffi::{c_char, c_void};
 
-use log::info;
+use log::{info, debug};
 
 use crate::{overlapped::OverlappedHandle, utilities::copy_str_to_c_char, core::CONFIG};
 
@@ -50,6 +50,21 @@ extern "C" fn UPLAY_USER_GetUsername(output: *mut c_char, _unknown: u32) -> User
 
 #[no_mangle]
 extern "C" fn UPLAY_USER_GetNameUtf8() {} // you saw the note for UPLAY_USER_GetAccountIdUtf8
+
+#[no_mangle]
+extern "C" fn UPLAY_USER_GetTicketUtf8() {} // you saw the note for UPLAY_USER_GetAccountIdUtf8
+
+#[no_mangle]
+extern "C" fn UPLAY_USER_IsConnected() -> bool {
+    return true;
+}
+
+#[no_mangle]
+extern "C" fn UPLAY_USER_IsOwned(_unknown: i32) -> bool {
+    debug!("user IsOwned {}", _unknown);
+    return true;
+}
+
 
 #[no_mangle]
 extern "C" fn UPLAY_USER_SetGameSession(

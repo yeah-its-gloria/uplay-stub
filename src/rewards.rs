@@ -7,3 +7,8 @@ use std::ffi::c_void;
 extern "C" fn UPLAY_WIN_ReleaseRewardList(_unknown: *mut c_void) -> bool {
     return false;
 }
+
+#[no_mangle]
+extern "C" fn UPLAY_WIN_RefreshActions() -> bool {
+    return false;
+}
