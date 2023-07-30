@@ -60,7 +60,7 @@ extern "C" fn UPLAY_Startup(
     match load_config() {
         Ok(config) => *CONFIG.lock().unwrap() = Some(config),
         Err(_) => {
-            panic!("configuration not found"); // TODO:  show the user a message box instead
+            panic!("configuration not found"); // TODO: show the user a message box instead
         }
     };
 

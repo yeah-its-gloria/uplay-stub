@@ -1,5 +1,12 @@
+# IDE caches
+.idea
 .vscode
 
+# My own garbage
 stuff
 
+# Cargo cache
 /target
+
+# you know the drill
+config.json
